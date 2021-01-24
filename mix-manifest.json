@@ -2,5 +2,15 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/favicon.ico": "/favicon.ico",
+    "/images/android.png": "/images/android.png",
+    "/images/angular.png": "/images/angular.png",
+    "/images/bootstrap.png": "/images/bootstrap.png",
+    "/images/docker.png": "/images/docker.png",
+    "/images/laravel.png": "/images/laravel.png",
+    "/images/mysql.png": "/images/mysql.png",
+    "/images/nuxt.png": "/images/nuxt.png",
+    "/images/profile.png": "/images/profile.png",
+    "/images/sass.png": "/images/sass.png",
+    "/images/vue.png": "/images/vue.png",
     "/index.html": "/index.html"
 }
