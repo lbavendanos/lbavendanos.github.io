@@ -6,11 +6,15 @@
     "/images/angular.png": "/images/angular.png",
     "/images/bootstrap.png": "/images/bootstrap.png",
     "/images/docker.png": "/images/docker.png",
+    "/images/flutter.png": "/images/flutter.png",
     "/images/laravel.png": "/images/laravel.png",
     "/images/mysql.png": "/images/mysql.png",
+    "/images/next.png": "/images/next.png",
     "/images/nuxt.png": "/images/nuxt.png",
     "/images/profile.png": "/images/profile.png",
+    "/images/react.png": "/images/react.png",
     "/images/sass.png": "/images/sass.png",
+    "/images/tailwind.png": "/images/tailwind.png",
     "/images/vue.png": "/images/vue.png",
     "/index.html": "/index.html"
 }
