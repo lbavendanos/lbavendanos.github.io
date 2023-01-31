@@ -1,0 +1,40 @@
+---
+export interface Props {
+  percent: number
+}
+
+const { percent } = Astro.props
+
+const radius = 16
+const circumference = radius * 2 * Math.PI
+---
+
+<div class="relative p-0 m-0">
+  <svg
+    class="w-full h-full -rotate-90"
+    viewBox="0 0 42 42"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle
+      class="fill-transparent stroke-blue-200 stroke-[3px]"
+      cx="21"
+      cy="21"
+      r={radius}></circle>
+    <circle
+      class="fill-transparent stroke-blue-400 stroke-[3px]"
+      cx="21"
+      cy="21"
+      r={radius}
+      stroke-dasharray={circumference}
+      stroke-dashoffset={circumference - (percent / 100) * circumference}
+    ></circle>
+  </svg>
+  <div
+    class:list={[
+      'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2',
+      'flex flex-col items-center justify-center space-y-1',
+    ]}
+  >
+    <slot />
+  </div>
+</div>

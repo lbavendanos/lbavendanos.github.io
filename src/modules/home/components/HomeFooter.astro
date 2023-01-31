@@ -1,0 +1,17 @@
+---
+import Container from '@/common/Container.astro'
+
+export interface Props {
+  class?: string
+}
+
+const { class: className } = Astro.props
+---
+
+<footer class:list={['bg-blue-400 py-2', className]}>
+  <Container>
+    <div class="flex items-center">
+      <p class="text-white text-xs uppercase">lbavendanos</p>
+    </div>
+  </Container>
+</footer>
