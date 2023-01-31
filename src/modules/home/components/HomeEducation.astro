@@ -1,3 +1,17 @@
+---
+import HomeTimeline, { Items } from './HomeTimeline.astro'
+
+const items: Items = [
+  {
+    url: 'https://www.upc.edu.pe/',
+    title: 'Systems Engineering (UPC)',
+    description: 'Using Java and Ruby as programming languages.',
+    time: 'February 2022',
+  },
+]
+---
+
 <section class="space-y-4">
   <h3 class="text-center text-xl font-semibold text-blue-400">EDUCATION</h3>
+  <HomeTimeline {items} />
 </section>
