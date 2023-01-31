@@ -4,19 +4,31 @@ import '@fontsource/inter/600.css'
 
 export interface Props {
   title: string
+  description: string
 }
 
-const { title } = Astro.props
+const { title, description } = Astro.props
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <meta name="locality" content="Lima, Peru" />
+    <meta name="author" content="lbavendanos" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:url" content="https://lbavendanos.github.io" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={description} />
+    <meta
+      property="og:image"
+      content="https://lbavendanos.github.io/profile.png"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
   </head>
   <body class="font-sans">
     <slot />
