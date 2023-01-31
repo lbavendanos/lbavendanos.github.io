@@ -1,5 +1,6 @@
 ---
 export interface Item {
+  url: string
   title: string
   description: string
   time: string
@@ -33,14 +34,18 @@ const { items } = Astro.props
             />
           </svg>
         </div>
-        <h3 class="flex items-center mb-1 text-lg font-semibold text-blue-400">
+        <a
+          href={item.url}
+          class="flex items-center mb-1 text-lg font-semibold text-blue-400 hover:text-blue-800"
+          target="_blank"
+        >
           {item.title}
-        </h3>
+        </a>
         <time class="block mb-2 text-sm font-normal leading-none text-gray-400">
           {item.time}
         </time>
         <p class="mb-4 text-base font-normal leading-snug">
-          {item.description}
+          <Fragment set:html={item.description} />
         </p>
       </li>
     ))
