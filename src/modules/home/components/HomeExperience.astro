@@ -1,3 +1,35 @@
+---
+import HomeTimeline, { Items } from './HomeTimeline.astro'
+
+const items: Items = [
+  {
+    title: 'Software Developer (ClassBento)',
+    description:
+      'I was part of the team for the maintenance and development of new functionalities of the ClassBento website, which is deployed in different countries.',
+    time: 'February 2022',
+  },
+  {
+    title: 'Software Developer (Rimac)',
+    description:
+      'I was part of the team in charge of developing new functionalities and giving support to the Rimac broker portal.',
+    time: 'March 2022',
+  },
+  {
+    title: 'Software Developer (FlexIT)',
+    description:
+      'Part of the team in charge of developing the different FlexIT products. Among the main ones are: EnhanceTV, Tap Rewards and Social Feed.',
+    time: 'April 2022',
+  },
+  {
+    title: 'Systems Analyst (Coopsol Group)',
+    description:
+      'I developed all the websites of the different companies that make up the Coopsol Group.',
+    time: 'April 2022',
+  },
+]
+---
+
 <section class="space-y-4">
   <h3 class="text-center text-xl font-semibold text-blue-400">EXPERIENCE</h3>
+  <HomeTimeline {items} />
 </section>
