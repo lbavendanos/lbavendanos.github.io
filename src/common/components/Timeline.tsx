@@ -8,7 +8,7 @@ export interface Item {
 
 export type Items = Item[]
 
-export interface HomeTimelineProps {
+export interface TimelineProps {
   items: Items
 }
 
@@ -19,7 +19,7 @@ const dateFormat = (date: Date) =>
     timeZone: import.meta.env.APP_TIMEZONE,
   }).format(date)
 
-export default function HomeTimeline({ items }: HomeTimelineProps) {
+export default function Timeline({ items }: TimelineProps) {
   return (
     <ol className="relative border-0 md:border-l md:border-gray-200">
       {items.map((item, index) => (
