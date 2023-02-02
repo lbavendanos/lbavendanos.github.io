@@ -13,56 +13,44 @@ import {
 } from '@/common/components/Icons'
 import HomeKnowledgeProgress from './HomeKnowledgeProgress.astro'
 
-const brandIconClass = 'w-12 h-12 md:w-8 md:h-8'
-const brandNameClass = 'text-xs tracking-tight uppercase'
+const items = [
+  { name: 'react', percent: 90, Icon: ReactIcon },
+  { name: 'next', percent: 90, Icon: NextIcon },
+  { name: 'laravel', percent: 90, Icon: LaravelIcon },
+  { name: 'vue', percent: 50, Icon: VueIcon },
+  { name: 'nuxt', percent: 50, Icon: NuxtIcon },
+  { name: 'flutter', percent: 50, Icon: FlutterIcon },
+  { name: 'tailwind', percent: 90, Icon: TailwindIcon },
+  { name: 'bootstrap', percent: 90, Icon: BootstrapIcon },
+  { name: 'mysql', percent: 60, Icon: MysqlIcon },
+  { name: 'docker', percent: 30, Icon: DockerIcon },
+]
+
+const iconClass = 'w-12 h-12 md:w-8 md:h-8'
+const nameClass = 'text-xs tracking-tight uppercase'
+const percentClass = 'text-xs text-gray-400 -mt-0.5'
 ---
 
 <section class="space-y-4">
   <h3 class="text-center text-xl font-semibold text-blue-400 uppercase">
     Knowledge
   </h3>
-  <p>Some of the technologies I use frequently.</p>
+  <p>
+    Some of the technologies I use frequently. Each displayed technologies has
+    an index on the level of use.
+  </p>
   <div class="grid grid-cols-2 sm:grid-cols-3 gap-0.5">
-    <HomeKnowledgeProgress percent={90}>
-      <ReactIcon className={brandIconClass} />
-      <p class={brandNameClass}>react</p>
-    </HomeKnowledgeProgress>
-    <HomeKnowledgeProgress percent={90}>
-      <NextIcon className={brandIconClass} />
-      <p class={brandNameClass}>next</p>
-    </HomeKnowledgeProgress>
-    <HomeKnowledgeProgress percent={90}>
-      <LaravelIcon className={brandIconClass} />
-      <p class={brandNameClass}>laravel</p>
-    </HomeKnowledgeProgress>
-    <HomeKnowledgeProgress percent={50}>
-      <VueIcon className={brandIconClass} />
-      <p class={brandNameClass}>vue</p>
-    </HomeKnowledgeProgress>
-    <HomeKnowledgeProgress percent={50}>
-      <NuxtIcon className={brandIconClass} />
-      <p class={brandNameClass}>nuxt</p>
-    </HomeKnowledgeProgress>
-    <HomeKnowledgeProgress percent={50}>
-      <FlutterIcon className={brandIconClass} />
-      <p class={brandNameClass}>flutter</p>
-    </HomeKnowledgeProgress>
-    <HomeKnowledgeProgress percent={90}>
-      <TailwindIcon className={brandIconClass} />
-      <p class={brandNameClass}>tailwind</p>
-    </HomeKnowledgeProgress>
-    <HomeKnowledgeProgress percent={90}>
-      <BootstrapIcon className={brandIconClass} />
-      <p class={brandNameClass}>bootstrap</p>
-    </HomeKnowledgeProgress>
-    <HomeKnowledgeProgress percent={60}>
-      <MysqlIcon className={brandIconClass} />
-      <p class={brandNameClass}>mysql</p>
-    </HomeKnowledgeProgress>
-    <HomeKnowledgeProgress percent={30}>
-      <DockerIcon className={brandIconClass} />
-      <p class={brandNameClass}>docker</p>
-    </HomeKnowledgeProgress>
+    {
+      items.map(({ name, percent, Icon }) => (
+        <HomeKnowledgeProgress {percent}>
+          <Icon className={iconClass} />
+          <div class="text-center">
+            <p class={nameClass}>{name}</p>
+            <p class={percentClass}>{percent}%</p>
+          </div>
+        </HomeKnowledgeProgress>
+      ))
+    }
   </div>
   <p>Also, I use GIT for project version control.</p>
 </section>
