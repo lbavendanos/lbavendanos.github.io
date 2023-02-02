@@ -4,6 +4,7 @@ import {
   TwitterIcon,
   EnvelopeIcon,
   FacebookIcon,
+  LinkedInIcon,
 } from '@/common/components/Icons'
 
 const linkClass = 'px-1 transition ease-in-out duration-300 hover:scale-110'
@@ -31,6 +32,15 @@ const iconClass = 'w-5 h-5 fill-white'
     <a href="https://github.com/lbavendanos" class={linkClass} target="_blank">
       <div class:list={[iconWrapperClass, 'bg-[#181717] ']}>
         <GithubIcon className={iconClass} />
+      </div>
+    </a>
+    <a
+      href="https://www.linkedin.com/in/lbavendanos/"
+      class={linkClass}
+      target="_blank"
+    >
+      <div class:list={[iconWrapperClass, 'bg-[#0A66C2] ']}>
+        <LinkedInIcon className={iconClass} />
       </div>
     </a>
     <a href="mailto:lbavendanos@gmail.com" class={linkClass} target="_blank">
