@@ -59,6 +59,7 @@ export function VueIcon(props: IconProps) {
 export function NuxtIcon({ className, ...props }: IconProps) {
   return (
     <svg
+      {...props}
       className={cn('fill-[#00DC82]', className)}
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
