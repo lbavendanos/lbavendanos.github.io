@@ -7,9 +7,9 @@ import {
   LinkedInIcon,
 } from '@/common/components/Icons'
 
-const linkClass = 'px-1 transition ease-in-out duration-300 hover:scale-110'
-const iconWrapperClass = 'p-4 rounded-full'
-const iconClass = 'w-5 h-5 fill-white'
+const anchorClass = 'px-1 transition ease-in-out duration-300 hover:scale-110'
+const iconWrapperClass = 'p-3 md:p-4 rounded-full'
+const iconClass = 'w-4 h-4 md:w-5 md:h-5 fill-white'
 ---
 
 <section class="space-y-4">
@@ -17,33 +17,41 @@ const iconClass = 'w-5 h-5 fill-white'
   <div class="flex justify-center gap-x-2.5">
     <a
       href="https://www.facebook.com/lbavendanos"
-      class={linkClass}
+      class={anchorClass}
       target="_blank"
     >
       <div class:list={[iconWrapperClass, 'bg-[#1877F2] ']}>
         <FacebookIcon className={iconClass} />
       </div>
     </a>
-    <a href="https://twitter.com/lbavendanos" class={linkClass} target="_blank">
+    <a
+      href="https://twitter.com/lbavendanos"
+      class={anchorClass}
+      target="_blank"
+    >
       <div class:list={[iconWrapperClass, 'bg-[#1DA1F2] ']}>
         <TwitterIcon className={iconClass} />
       </div>
     </a>
-    <a href="https://github.com/lbavendanos" class={linkClass} target="_blank">
+    <a
+      href="https://github.com/lbavendanos"
+      class={anchorClass}
+      target="_blank"
+    >
       <div class:list={[iconWrapperClass, 'bg-[#181717] ']}>
         <GithubIcon className={iconClass} />
       </div>
     </a>
     <a
       href="https://www.linkedin.com/in/lbavendanos/"
-      class={linkClass}
+      class={anchorClass}
       target="_blank"
     >
       <div class:list={[iconWrapperClass, 'bg-[#0A66C2] ']}>
         <LinkedInIcon className={iconClass} />
       </div>
     </a>
-    <a href="mailto:lbavendanos@gmail.com" class={linkClass} target="_blank">
+    <a href="mailto:lbavendanos@gmail.com" class={anchorClass} target="_blank">
       <div class:list={[iconWrapperClass, 'bg-[#504e54] ']}>
         <EnvelopeIcon className={iconClass} />
       </div>
