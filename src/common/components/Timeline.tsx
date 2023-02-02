@@ -1,3 +1,5 @@
+import { dtFormat } from 'lib/utils/date'
+
 export interface Item {
   url: string
   title: string
@@ -11,13 +13,6 @@ export type Items = Item[]
 export interface TimelineProps {
   items: Items
 }
-
-const dateFormat = (date: Date) =>
-  new Intl.DateTimeFormat('en-US', {
-    month: 'long',
-    year: 'numeric',
-    timeZone: import.meta.env.APP_TIMEZONE,
-  }).format(date)
 
 export default function Timeline({ items }: TimelineProps) {
   return (
@@ -48,13 +43,13 @@ export default function Timeline({ items }: TimelineProps) {
           </a>
           <div className="flex gap-x-1 mb-2 text-sm font-normal leading-none text-gray-400">
             <time dateTime={item.timeStart}>
-              {dateFormat(new Date(item.timeStart))}
+              {dtFormat(new Date(item.timeStart))}
             </time>
             {item.timeEnd && (
               <>
                 -
                 <time dateTime={item.timeEnd}>
-                  {dateFormat(new Date(item.timeEnd))}
+                  {dtFormat(new Date(item.timeEnd))}
                 </time>
               </>
             )}
