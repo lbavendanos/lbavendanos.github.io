@@ -14,6 +14,7 @@ import {
 export interface Item {
   url: string
   title: string
+  subtitle: string
   description: string
   timeStart: string
   timeEnd?: string
@@ -27,11 +28,13 @@ export interface TimelineProps {
 }
 
 export default function Timeline({ items }: TimelineProps) {
+  const toolIconClassName = 'inline-block w-4 h-4'
+
   return (
     <ol className="relative border-0 md:border-l md:border-gray-200">
       {items.map((item, index) => (
         <li key={index} className="mb-10 ml-0 md:ml-5">
-          <div className="hidden absolute md:flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white mt-1">
+          <div className="hidden absolute md:flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white mt-0.5">
             <svg
               aria-hidden="true"
               className="w-3 h-3 text-blue-800"
@@ -46,14 +49,13 @@ export default function Timeline({ items }: TimelineProps) {
               />
             </svg>
           </div>
-          <a
-            href={item.url}
-            className="flex items-center mb-1 text-lg font-semibold text-blue-400 hover:text-blue-800"
-            target="_blank"
-          >
+          <h4 className="text-lg leading-snug font-semibold text-blue-400">
             {item.title}
-          </a>
-          <div className="flex gap-x-1 mb-2 text-sm font-normal leading-none text-gray-400">
+          </h4>
+          <p className="font-semibold text-base leading-snug">
+            {item.subtitle}
+          </p>
+          <p className="flex gap-x-1 mb-3 text-sm font-normal leading-snug text-gray-400">
             <time dateTime={item.timeStart}>
               {dtFormat(new Date(item.timeStart))}
             </time>
@@ -65,39 +67,36 @@ export default function Timeline({ items }: TimelineProps) {
                 </time>
               </>
             )}
-          </div>
-          <p
-            className="mb-4 text-base font-normal leading-snug"
-            dangerouslySetInnerHTML={{ __html: item.description }}
-          />
+          </p>
+          <p className="mb-3 text-base font-normal leading-snug">
+            {item.description}
+          </p>
           {item.tools && (
             <div className="space-x-2">
               <p className="text-base font-semibold inline-block">Tools:</p>
               {item.tools?.map((tool, index) => (
                 <React.Fragment key={index}>
                   {tool === 'react' && (
-                    <ReactIcon className="inline-block w-4 h-4" />
+                    <ReactIcon className={toolIconClassName} />
                   )}
                   {tool === 'next' && (
-                    <NextIcon className="inline-block w-4 h-4" />
+                    <NextIcon className={toolIconClassName} />
                   )}
-                  {tool === 'vue' && (
-                    <VueIcon className="inline-block w-4 h-4" />
-                  )}
+                  {tool === 'vue' && <VueIcon className={toolIconClassName} />}
                   {tool === 'laravel' && (
-                    <LaravelIcon className="inline-block w-4 h-4" />
+                    <LaravelIcon className={toolIconClassName} />
                   )}
                   {tool === 'flutter' && (
-                    <FlutterIcon className="inline-block w-4 h-4" />
+                    <FlutterIcon className={toolIconClassName} />
                   )}
                   {tool === 'tailwind' && (
-                    <TailwindIcon className="inline-block w-4 h-4" />
+                    <TailwindIcon className={toolIconClassName} />
                   )}
                   {tool === 'bootstrap' && (
-                    <BootstrapIcon className="inline-block w-4 h-4" />
+                    <BootstrapIcon className={toolIconClassName} />
                   )}
                   {tool === 'mysql' && (
-                    <MysqlIcon className="inline-block w-4 h-4" />
+                    <MysqlIcon className={toolIconClassName} />
                   )}
                 </React.Fragment>
               ))}
