@@ -1,4 +1,15 @@
 import { dtFormat } from 'lib/utils/date'
+import React from 'react'
+import {
+  VueIcon,
+  NextIcon,
+  MysqlIcon,
+  ReactIcon,
+  LaravelIcon,
+  FlutterIcon,
+  TailwindIcon,
+  BootstrapIcon,
+} from './Icons'
 
 export interface Item {
   url: string
@@ -6,6 +17,7 @@ export interface Item {
   description: string
   timeStart: string
   timeEnd?: string
+  tools?: string[]
 }
 
 export type Items = Item[]
@@ -58,6 +70,39 @@ export default function Timeline({ items }: TimelineProps) {
             className="mb-4 text-base font-normal leading-snug"
             dangerouslySetInnerHTML={{ __html: item.description }}
           />
+          {item.tools && (
+            <div className="space-x-2">
+              <p className="text-base font-semibold inline-block">Tools:</p>
+              {item.tools?.map((tool, index) => (
+                <React.Fragment key={index}>
+                  {tool === 'react' && (
+                    <ReactIcon className="inline-block w-4 h-4" />
+                  )}
+                  {tool === 'next' && (
+                    <NextIcon className="inline-block w-4 h-4" />
+                  )}
+                  {tool === 'vue' && (
+                    <VueIcon className="inline-block w-4 h-4" />
+                  )}
+                  {tool === 'laravel' && (
+                    <LaravelIcon className="inline-block w-4 h-4" />
+                  )}
+                  {tool === 'flutter' && (
+                    <FlutterIcon className="inline-block w-4 h-4" />
+                  )}
+                  {tool === 'tailwind' && (
+                    <TailwindIcon className="inline-block w-4 h-4" />
+                  )}
+                  {tool === 'bootstrap' && (
+                    <BootstrapIcon className="inline-block w-4 h-4" />
+                  )}
+                  {tool === 'mysql' && (
+                    <MysqlIcon className="inline-block w-4 h-4" />
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
+          )}
         </li>
       ))}
     </ol>
