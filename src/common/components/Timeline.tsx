@@ -6,6 +6,7 @@ import {
   MysqlIcon,
   ReactIcon,
   LaravelIcon,
+  AndroidIcon,
   FlutterIcon,
   TailwindIcon,
   BootstrapIcon,
@@ -85,6 +86,9 @@ export default function Timeline({ items }: TimelineProps) {
                   {tool === 'vue' && <VueIcon className={toolIconClassName} />}
                   {tool === 'laravel' && (
                     <LaravelIcon className={toolIconClassName} />
+                  )}
+                  {tool === 'android' && (
+                    <AndroidIcon className={toolIconClassName} />
                   )}
                   {tool === 'flutter' && (
                     <FlutterIcon className={toolIconClassName} />
