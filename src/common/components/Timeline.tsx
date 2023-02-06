@@ -10,7 +10,7 @@ import {
   FlutterIcon,
   TailwindIcon,
   BootstrapIcon,
-} from './Icons'
+} from './ColorIcons'
 
 export interface Item {
   url: string
